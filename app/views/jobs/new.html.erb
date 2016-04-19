@@ -2,12 +2,6 @@
 
 <p>Describe your job and leave your contact information below. We will be in touch!</p>
 
-<form role="form">
-  <div class="form-group">
-    <label for=""></label>
-
-  </div>
-</form>
 <%= simple_form_for :job, url: jobs_path do |f| %>
   <%= f.input :description, as: :text %>
   <%= f.input :location, required: false%>
