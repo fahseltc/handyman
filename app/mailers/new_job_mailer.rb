@@ -5,7 +5,7 @@ class NewJobMailer < ApplicationMailer
   def new_job(job_id)
     @job = Job.find(job_id)
 
-    mg_client = Mailgun::Client.new 'key-590686efd30b60a98524f5615ac40e28'
+    mg_client = Mailgun::Client.new Rails.application.secrets.mailgun_api_key
 
     content = "Description: #{@job.description}\nPhone: #{@job.phone}\n#{job_url(@job.id)}"
 
@@ -14,7 +14,7 @@ class NewJobMailer < ApplicationMailer
                   :subject => 'Someone has submitted a new job request',
                   :text    => content}
 
-    mg_client.send_message 'sandbox363062969a794f9eaebb78c41349cfd7.mailgun.org', message_params
+    mg_client.send_message Rails.application.secrets.mailgun_username, message_params
 
   end
 end
