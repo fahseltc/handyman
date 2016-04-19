@@ -1,0 +1,23 @@
+<h1>Listing Jobs</h1>
+
+<table class="table" style="table-layout: fixed; word-wrap: break-word;">
+  <tr>
+    <th  class="col-md-1">ID</th>
+    <th class="col-md-4">Description</th>
+    <th class="col-md-4">Location</th>
+    <th class="col-md-1">Details</th>
+    <th class="col-md-1">Delete</th>
+  </tr>
+
+  <% @jobs.each do |job| %>
+    <tr>
+      <td><%= job.id %></td>
+      <td><%= job.description %></td>
+      <td><%= job.location %></td>
+      <td><%= link_to 'Show', job_path(job) %></td>
+      <td><%= link_to 'Destroy', job_path(job),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

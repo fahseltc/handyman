@@ -1,0 +1,5 @@
+<%if @updated == "true"%>
+  $('#updated').html("Your post has been successfully updated").show();
+<%elsif @updated == "false"%>
+  $('#updated').html("Your post could not be updated").show();
+<%end%>

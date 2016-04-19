@@ -1,0 +1,31 @@
+<table class="table">
+  <tr>
+    <th>Job Description</th>
+    <td><%= @job.description %></td>
+  </tr>
+  <tr>
+    <th>Job Location</th>
+    <td><%= @job.location %></td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td><%= @job.email %></td>
+  </tr>
+  <tr>
+    <th>Phone</th>
+    <td><%= @job.phone %></td>
+  </tr>
+  <tr>
+    <th>Contact Info</th>
+    <td><%= @job.contact_info %></td>
+  </tr>
+</table>
+<p> Notes </p>
+<%= form_tag({:controller=>'jobs',:action=>'update_note'},:method=>:post,:id=>"update_note",:name=>'note_form',:remote=>true) do %>
+      <td><textarea name="note" class="form-control" id="comment"><%= @job.notes %></textarea></td>
+      <%= hidden_field_tag 'id', @job.id  %>
+      <div class="secondary btn pretty"><%= submit_tag 'Save' %></div>
+    <%end%>
+<div id="updated">
+
+</div>

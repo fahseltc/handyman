@@ -1,0 +1,21 @@
+<h1>Submit a request for an estimate</h1>
+
+<p>Describe your job and leave your contact information below. We will be in touch!</p>
+
+<form role="form">
+  <div class="form-group">
+    <label for=""></label>
+
+  </div>
+</form>
+<%= simple_form_for :job, url: jobs_path do |f| %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :location, required: false%>
+  <%= f.input :email, required: false %>
+  <%= f.input :phone, required: false %>
+  <%= f.input :contact_info, required: false %>
+  <%= f.input :humanizer_answer, label: @job.humanizer_question %>
+  <%= f.hidden_field :humanizer_question_id %>
+  <%= f.button :submit, "Submit Request" %>
+
+<% end %>

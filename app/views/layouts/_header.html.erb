@@ -1,0 +1,41 @@
+<nav class=navbar navbar-default>
+  <div class="container-fluid">
+    <div class="navbar-brand" style="font-weight: bold">Handyman Bob </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <%= link_to root_path do %>
+          <i class="glyphicon glyphicon-home"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to new_job_path do %>
+          <i class="glyphicon glyphicon-wrench"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to about_path do %>
+          <i class="glyphicon glyphicon-question-sign"></i>
+        <% end %>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user.try(:admin) %>
+        <li><%= link_to "View Jobs", jobs_path %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+      <% end %>
+      <% if !user_signed_in? %>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+<style type="text/css">
+  i {
+    font-size: 1.8em;
+  }
+  a {
+    color: black;
+  }
+
+</style>

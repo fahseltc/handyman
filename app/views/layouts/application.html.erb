@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WorkEstimation</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style="background: url(http://s29.postimg.org/job72hmdz/wood_8.jpg)">
+
+<div id="main-container" class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="wrapper">
+        <%= render "layouts/header" %>
+        <%= flash_messages %>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
