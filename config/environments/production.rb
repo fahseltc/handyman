@@ -88,4 +88,7 @@ Rails.application.configure do
     password:             ENV['password'],
     authentication:       'plain'
     }
+
+  config.serve_static_assets = true
+  config.assets.compile = true
 end
