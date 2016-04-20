@@ -10,6 +10,6 @@
   <%= f.input :contact_info, required: false %>
   <%= f.input :humanizer_answer, label: @job.humanizer_question %>
   <%= f.hidden_field :humanizer_question_id %>
-  <%= f.button :submit, "Submit Request" %>
+  <%= f.button :submit, "Submit Request", class: "btn btn-primary btn-lg" %>
 
 <% end %>

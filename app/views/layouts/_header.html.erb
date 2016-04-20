@@ -1,6 +1,8 @@
-<nav class=navbar navbar-default>
+<nav class="navbar navbar-static-top">
   <div class="container-fluid">
-    <div class="navbar-brand" style="font-weight: bold">Handyman Bob </div>
+    <div class="navbar-brand" style="font-weight: bold">Handyman Bob<br>
+      <p class="text-center text-muted" style="font-weight: normal">(999)999-1234</p>
+    </div>
     <ul class="nav navbar-nav">
       <li>
         <%= link_to root_path do %>
@@ -18,7 +20,7 @@
         <% end %>
       </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
+    <ul id="right" class="nav navbar-nav navbar-right">
       <% if current_user.try(:admin) %>
         <li><%= link_to "View Jobs", jobs_path %></li>
         <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
@@ -36,6 +38,9 @@
   }
   a {
     color: black;
+  }
+  #right {
+    padding-right: 15px;
   }
 
 </style>

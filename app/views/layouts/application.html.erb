@@ -7,16 +7,18 @@
     <%= csrf_meta_tags %>
   </head>
   <body style="background: url(../assets/wood.jpg)">
+  <%= render "layouts/header" %>
     <div id="main-container" class="container">
       <div class="row">
         <div class="col-xs-12">
           <div class="wrapper">
-            <%= render "layouts/header" %>
             <%= flash_messages %>
             <%= yield %>
+            <%= render "layouts/footer" %>
           </div>
         </div>
       </div>
     </div>
+
   </body>
 </html>
